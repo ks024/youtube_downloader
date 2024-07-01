@@ -11,7 +11,7 @@ def get_available_streams(streams):
 def download_video(stream):
     try:
         print(f"\nDownloading '{stream.title}'...")
-        stream.download()
+        stream.download(output_path='/app/downloads')
         print("Download completed successfully!")
     except Exception as e:
         print(f"Error downloading video: {str(e)}")
@@ -36,7 +36,7 @@ def main():
     get_available_streams(streams)
 
     while True:
-        choice = input("\nEnter the number of the format you want to download or 'q' to quit: ")
+        choice = input("\nEnter the number of the file you want to download or 'q' to quit: ")
         if choice.lower() == 'q':
             return
 
